@@ -1,2 +1,17 @@
 ---
 # vars file for {{ cookiecutter.role_name }}
+
+centos_packages:
+  - {{ cookiecutter.role_name }}
+
+rhel_packages:
+  - {{ cookiecutter.role_name }}
+
+fedora_packages:
+  - {{ cookiecutter.role_name }}
+
+debian_packages:
+  - {{ cookiecutter.role_name }}
+
+ubuntu_packages:
+  - {{ cookiecutter.role_name }}

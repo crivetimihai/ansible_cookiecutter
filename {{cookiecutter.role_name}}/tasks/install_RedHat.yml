@@ -1,0 +1,8 @@
+---
+# Install {{ cookiecutter.role_name }} on RedHat
+
+- name: install RedHat packages
+  package:
+    name: {% raw -%}"{{ redhat_packages }}"{%- endraw %}
+    state: present
+  become: yes

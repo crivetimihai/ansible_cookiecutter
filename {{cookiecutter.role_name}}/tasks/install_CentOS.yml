@@ -1,0 +1,8 @@
+---
+# Install {{ cookiecutter.role_name }} on CentOS
+
+- name: Install CentOS packages
+  package:
+    name: {% raw -%}"{{ centos_packages }}"{%- endraw %}
+    state: present
+  become: yes

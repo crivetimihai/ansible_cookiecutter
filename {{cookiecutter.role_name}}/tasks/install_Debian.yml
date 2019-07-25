@@ -1,0 +1,8 @@
+---
+# Install {{ cookiecutter.role_name }} on Debian
+
+- name: install Debian packages
+  package:
+    name: {% raw -%}"{{ debian_packages }}"{%- endraw %}
+    state: absent
+  become: yes

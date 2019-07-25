@@ -1,0 +1,8 @@
+---
+# Install {{ cookiecutter.role_name }} on Fedora
+
+- name: install Fedora packages
+  package:
+    name: {% raw -%}"{{ fedora_packages }}"{%- endraw %}
+    state: present
+  become: yes
