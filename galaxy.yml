@@ -1,0 +1,27 @@
+namespace: "crivetimihai"
+name: "virtualization"
+version: "1.0.15"
+readme: "README.md"
+authors:
+  - "Mihai Criveti (https://twitter.com/crivetimihai)"
+description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware, LXD, Docker-CE, Podman"
+license:
+  - "MIT"
+tags:
+  - linux
+  - virtualization
+  - hypervisor
+  - virtualbox
+  - kvm
+  - lxd
+  - lxc
+  - vmware
+  - docker
+  - podman
+  - buildah
+  - skopeo
+  - collection
+repository: "https://www.github.com/crivetimihai/ansible_virtualization"
+homepage: "https://www.github.com/crivetimihai/ansible_virtualization"
+documentation: "https://crivetimihai.github.io/ansible_virtualization/"
+issues: "https://www.github.com/crivetimihai/ansible_virtualization/issues"

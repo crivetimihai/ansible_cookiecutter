@@ -1,0 +1,9 @@
+---
+# ansible-playbook playbook.yml
+
+- hosts: all
+  connection: ssh
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: {{ cookiecutter.role_name }}
