@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: {{ cookiecutter.role_name }}_debian10
+  - name: {{ cookiecutter.role_name }}-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: {{ cookiecutter.role_name }}_centos7
+  - name: {{ cookiecutter.role_name }}-centos-7
     box: centos/7
 provisioner:
   name: ansible
