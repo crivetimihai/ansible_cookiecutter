@@ -9,8 +9,10 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: {{ cookiecutter.role_name }}-fedora-30
-    image: fedora:30
+  - name: {{ cookiecutter.role_name }}-rhel-7
+    image: ubi
+    registry:
+      url: registry.access.redhat.com/ubi7
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False
     privileged: True
@@ -21,8 +23,6 @@ platforms:
       container: docker
 provisioner:
   name: ansible
-  extra_vars:
-    ansible_python_interpreter: /usr/bin/python3
   log: True
   playbooks:
     vagrant:

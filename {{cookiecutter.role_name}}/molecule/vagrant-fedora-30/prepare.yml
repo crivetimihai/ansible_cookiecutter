@@ -1,9 +1,0 @@
----
-- name: Prepare
-  hosts: all
-  gather_facts: false
-  tasks:
-    - name: Install python for Ansible
-      raw: dnf makecache && dnf --assumeyes install python3 sudo python3-devel python3-dnf bash && dnf clean all
-      changed_when: false
-  become: yes

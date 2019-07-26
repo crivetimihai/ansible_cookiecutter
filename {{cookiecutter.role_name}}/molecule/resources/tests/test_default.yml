@@ -1,0 +1,17 @@
+# Molecule managed
+---
+file:
+  /usr/bin/python:
+    exists: true
+    owner: root
+    group: root
+
+command:
+  version:
+    exit-status: 0
+    exec: python --version 2>&1
+    stdout:
+      - "/Python*/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false
