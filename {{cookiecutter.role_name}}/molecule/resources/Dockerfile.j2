@@ -14,4 +14,16 @@ RUN if [ $(command -v apt-get) ]; then apt-get update && apt-get install -y pyth
     elif [ $(command -v apk) ]; then apk update && apk add --no-cache python sudo bash ca-certificates; \
     elif [ $(command -v xbps-install) ]; then xbps-install -Syu && xbps-install -y python sudo bash ca-certificates && xbps-remove -O; fi
 
+# Create `ansible` user with sudo permissions and membership in `DEPLOY_GROUP`                                                                                           
+ 17 ENV ANSIBLE_USER=ansible DEPLOY_GROUP=deployer                                                                                                                           
+ 18 RUN set -xe \                                                                                                                                                            
+ 19   && if [ $(getent group wheel) ]; then export SUDO_GROUP=wheel; fi \                                                                                                    
+ 20   && if [ $(getent group sudo) ]; then export SUDO_GROUP=sudo; fi \                                                                                                      
+ 21   && groupadd -r ${ANSIBLE_USER} \                                                                                                                                       
+ 22   && groupadd -r ${DEPLOY_GROUP} \                                                                                                                                       
+ 23   && useradd -m -g ${ANSIBLE_USER} ${ANSIBLE_USER} \                                                                                                                     
+ 24   && usermod -aG ${SUDO_GROUP} ${ANSIBLE_USER} \                                                                                                                         
+ 25   && usermod -aG ${DEPLOY_GROUP} ${ANSIBLE_USER} \                                                                                                                       
+ 26   && sed -i "/^%${SUDO_GROUP}/s/ALL\$/NOPASSWD:ALL/g" /etc/sudoers 
+
 {%- endraw %}
