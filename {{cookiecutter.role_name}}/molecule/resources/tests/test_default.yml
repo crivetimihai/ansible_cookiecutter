@@ -1,17 +1,17 @@
 # Molecule managed
 ---
 file:
-  /etc/hosts:
+  /usr/bin/{{ cookiecutter.role_name }}:
     exists: true
     owner: root
     group: root
 
 command:
-  version:
+  help:
     exit-status: 0
-    exec: uname
+    exec: "{{ cookiecutter.role_name }} --help"
     stdout:
-      - "/Linux/"
+      - "/{{ cookiecutter.role_name }}/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false
