@@ -3,16 +3,25 @@ dependency:
   name: galaxy
   role-file: requirements.yml
 driver:
-  name: vagrant
+  name: docker
   provider:
-    name: virtualbox
+    name: docker
 lint:
   name: yamllint
 platforms:
-  - name: {{ cookiecutter.role_name }}_debian10
-    box: debian/buster64
+  - name: {{ cookiecutter.role_name }}_fedora30
+    image: fedora:30
+    dockerfile: ../resources/Dockerfile.j2
+    pre_build_image: False
+    privileged: True
+    volume_mounts:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+    environment:
+      container: docker
 provisioner:
   name: ansible
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
   log: True
   playbooks:
     vagrant:

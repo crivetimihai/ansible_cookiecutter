@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: {{ cookiecutter.role_name }}-rhel-7
+  - name: {{ cookiecutter.role_name }}_rhel7
     image: ubi
     registry:
       url: registry.access.redhat.com/ubi7
