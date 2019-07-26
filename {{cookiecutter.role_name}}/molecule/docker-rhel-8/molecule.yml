@@ -35,5 +35,6 @@ provisioner:
     name: ansible-lint
 verifier:
   name: goss
+  directory: ../resources/tests
   lint:
     name: yamllint

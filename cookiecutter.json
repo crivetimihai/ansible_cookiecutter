@@ -2,7 +2,7 @@
     "role_name": "role_name",
     "author": "Mihai Criveti",
     "author_information": "[Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)",
-    "description": "Ansible Galaxy Collection - Role",
+    "description": "{{ cookiecutter.role_name.capitalize() }}",
     "company": "Mihai Criveti",
     "license": "MIT",
     "min_ansible_version": 2.4
