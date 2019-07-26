@@ -1,7 +1,7 @@
 # Molecule managed
 ---
 file:
-  /usr/bin/python:
+  /etc/hosts:
     exists: true
     owner: root
     group: root
@@ -9,9 +9,9 @@ file:
 command:
   version:
     exit-status: 0
-    exec: python --version 2>&1
+    exec: uname
     stdout:
-      - "/Python*/"
+      - "/Linux/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false
