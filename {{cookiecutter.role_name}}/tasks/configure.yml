@@ -1,9 +1,8 @@
 ---
 # Configure {{ cookiecutter.role_name }}
-{% raw -%}
 - name: Enable service {{ cookiecutter.role_name }}, and start if not started
   service:
     name: {{ cookiecutter.role_name }}
     enabled: yes
     state: started
-  become: yes{%- endraw %}
+  become: yes
