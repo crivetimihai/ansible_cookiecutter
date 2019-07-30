@@ -1,8 +1,0 @@
----
-# Install {{ cookiecutter.role_name }} on Ubuntu
-
-- name: install Ubuntu packages
-  package:
-    name: {% raw -%}"{{ ubuntu_packages }}"{%- endraw %}
-    state: present
-  become: yes
