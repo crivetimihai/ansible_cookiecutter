@@ -1,8 +1,9 @@
 ---
 # tasks file for packages
-
+{% raw -%}
 - name: install packages
   package:
     name: "{{ packages }}"
     state: present
   become: yes
+{%- endraw %}

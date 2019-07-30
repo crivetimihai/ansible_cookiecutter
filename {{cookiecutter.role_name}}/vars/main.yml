@@ -7,7 +7,7 @@ _sshd_service_name:
   Debian: ssh
   Ubuntu: ssh
 
-sshd_service_name: "{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"
+sshd_service_name: {% raw -%}"{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"{%- endraw %}
 
 # Packages to install
 _packages:
@@ -16,4 +16,4 @@ _packages:
   CentOS:
     - "{{ cookiecutter.role_name }}"
 
-packages: "{{ _packages['all'] + ( _packages[ansible_distribution] | default([]) ) }}"
+{% raw -%}packages: "{{ _packages['all'] + ( _packages[ansible_distribution] | default([]) ) }}"{%- endraw %}
