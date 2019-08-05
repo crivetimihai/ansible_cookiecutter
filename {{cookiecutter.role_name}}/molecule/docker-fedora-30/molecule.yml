@@ -21,6 +21,9 @@ platforms:
       container: docker
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
   extra_vars:
     ansible_python_interpreter: /usr/bin/python3
   log: True

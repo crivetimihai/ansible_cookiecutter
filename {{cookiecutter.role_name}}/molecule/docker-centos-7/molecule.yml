@@ -24,6 +24,9 @@ platforms:
       container: docker
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
   log: True
   playbooks:
     vagrant:

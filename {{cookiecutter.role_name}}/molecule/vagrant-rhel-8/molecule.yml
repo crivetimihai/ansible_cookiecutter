@@ -13,6 +13,9 @@ platforms:
     box: cmihai/rhel-8-base
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
   log: True
   playbooks:
     vagrant:

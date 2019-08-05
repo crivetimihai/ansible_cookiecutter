@@ -13,6 +13,9 @@ platforms:
     box: centos/7
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
   log: True
   playbooks:
     vagrant:
