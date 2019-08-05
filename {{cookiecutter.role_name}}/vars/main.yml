@@ -2,12 +2,12 @@
 # vars file for {{ cookiecutter.role_name }}
 
 # SSH service name
-_sshd_service_name:
-  default: sshd
-  Debian: ssh
-  Ubuntu: ssh
+_service_name:
+  default: {{ cookiecutter.role_name }}
+  Debian: {{ cookiecutter.role_name }}
+  Ubuntu: {{ cookiecutter.role_name }}
 
-sshd_service_name: {% raw -%}"{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"{%- endraw %}
+service_name: {% raw -%}"{{ _service_name[ansible_distribution] | default(_service_name['default']) }}"{%- endraw %}
 
 # Packages to install
 _packages:

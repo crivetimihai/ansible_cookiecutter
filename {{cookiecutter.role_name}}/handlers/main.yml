@@ -1,7 +1,7 @@
 ---
 # handlers file for {{ cookiecutter.role_name }}
 
-- name: restart sshd
+- name: restart service
   service:
-    name: {% raw -%}"{{ sshd_service_name }}"{%- endraw %}
+    name: {% raw -%}"{{ service_name }}"{%- endraw %}
     state: restarted
